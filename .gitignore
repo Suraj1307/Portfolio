@@ -1,0 +1,7 @@
+node_modules/
+dist/
+_template_ref/
+ForgeChat/
+talkSpace/
+*.log
+SurajKumar_Resume .pdf

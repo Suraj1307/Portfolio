@@ -1,0 +1,81 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Count 1 /Kids [3 0 R] >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 639 >>
+stream
+BT
+/F1 24 Tf
+72 736 Td
+(Suraj Kumar) Tj
+0 -28 Td
+/F1 13 Tf
+(Backend & Full-Stack Developer) Tj
+0 -24 Td
+(Bhubaneswar, Odisha) Tj
+0 -18 Td
+(Email: surajrajnkh1244@gmail.com) Tj
+0 -18 Td
+(GitHub: https://github.com/Suraj1307) Tj
+0 -18 Td
+(LinkedIn: https://www.linkedin.com/in/suraj-kumar-a59915285) Tj
+0 -36 Td
+/F1 16 Tf
+(Profile) Tj
+0 -22 Td
+/F1 12 Tf
+(Computer Science student focused on backend systems, full-stack delivery,) Tj
+0 -16 Td
+(real-time applications, and production-ready web engineering.) Tj
+0 -34 Td
+/F1 16 Tf
+(Projects) Tj
+0 -22 Td
+/F1 12 Tf
+(ForgeChat - AI powered chat application with JWT auth and real-time messaging.) Tj
+0 -16 Td
+(Tech: React, Node.js, Express, MongoDB, Socket.io) Tj
+0 -16 Td
+(Talk-Space - Real-time messaging platform with secure authentication and APIs.) Tj
+0 -16 Td
+(Tech: MERN, WebSockets, JWT) Tj
+0 -34 Td
+/F1 16 Tf
+(Skills) Tj
+0 -22 Td
+/F1 12 Tf
+(C++, JavaScript, Python, Node.js, Express, React, MongoDB, MySQL, Git,) Tj
+0 -16 Td
+(Postman, REST APIs, JWT, WebSockets, AWS) Tj
+0 -34 Td
+/F1 16 Tf
+(Achievements) Tj
+0 -22 Td
+/F1 12 Tf
+(400+ DSA problems solved on LeetCode | Rating: 1539 | KIIT CGPA: 8.94) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000010 00000 n 
+0000000063 00000 n 
+0000000122 00000 n 
+0000000248 00000 n 
+0000000938 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+1008
+%%EOF

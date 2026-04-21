@@ -1,0 +1,22 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1280" height="720" rx="36" fill="#081220"/>
+  <rect x="40" y="40" width="1200" height="640" rx="28" fill="#0D1A2C"/>
+  <rect x="40" y="40" width="1200" height="72" rx="28" fill="#0B1525"/>
+  <circle cx="88" cy="76" r="10" fill="#FB7185"/>
+  <circle cx="122" cy="76" r="10" fill="#FBBF24"/>
+  <circle cx="156" cy="76" r="10" fill="#4ADE80"/>
+  <rect x="82" y="156" width="268" height="472" rx="20" fill="#0A1423"/>
+  <rect x="384" y="156" width="814" height="472" rx="20" fill="#101F35"/>
+  <rect x="104" y="188" width="144" height="18" rx="9" fill="#7DD3FC" fill-opacity="0.85"/>
+  <rect x="104" y="230" width="214" height="74" rx="18" fill="#122641"/>
+  <rect x="104" y="322" width="214" height="74" rx="18" fill="#122641"/>
+  <rect x="104" y="414" width="214" height="74" rx="18" fill="#122641"/>
+  <rect x="104" y="506" width="214" height="74" rx="18" fill="#122641"/>
+  <rect x="418" y="190" width="178" height="22" rx="11" fill="#DDEEFF"/>
+  <rect x="418" y="236" width="282" height="76" rx="18" fill="#16314F"/>
+  <rect x="720" y="336" width="312" height="76" rx="18" fill="#0D5C8D"/>
+  <rect x="418" y="438" width="248" height="76" rx="18" fill="#16314F"/>
+  <rect x="418" y="552" width="538" height="40" rx="20" fill="#0D1624"/>
+  <text x="418" y="98" fill="#EEF6FF" font-family="Arial, sans-serif" font-size="28" font-weight="700">ForgeChat</text>
+  <text x="418" y="131" fill="#8AA4C8" font-family="Arial, sans-serif" font-size="18">AI powered messaging with JWT auth and real-time sockets</text>
+</svg>
