@@ -1,5 +1,6 @@
 const formEndpoint =
   import.meta.env.VITE_FORMSPREE_ENDPOINT || "https://formspree.io/f/your-form-id";
+const showFormNote = import.meta.env.DEV;
 
 function ContactForm() {
   return (
@@ -39,10 +40,12 @@ function ContactForm() {
       <button className="button primary form-submit" type="submit">
         Send Message
       </button>
-      <p className="form-note">
-        Set <code>VITE_FORMSPREE_ENDPOINT</code> in a <code>.env</code> file to enable
-        direct Formspree submissions.
-      </p>
+      {showFormNote ? (
+        <p className="form-note">
+          Set <code>VITE_FORMSPREE_ENDPOINT</code> in a <code>.env</code> file to enable
+          direct Formspree submissions.
+        </p>
+      ) : null}
     </form>
   );
 }

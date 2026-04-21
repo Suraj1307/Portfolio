@@ -5,6 +5,14 @@ function ProjectCard({ project }) {
     <article className="project-card" data-reveal>
       <div className="project-media">
         <img src={project.image} alt={`${project.title} project preview`} />
+        <a
+          className="project-image-link"
+          href={project.image}
+          target="_blank"
+          rel="noreferrer"
+        >
+          View Screenshot
+        </a>
       </div>
 
       <div className="project-content">

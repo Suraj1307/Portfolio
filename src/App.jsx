@@ -63,34 +63,44 @@ const skillGroups = [
     title: "Languages",
     icon: <CodeIcon />,
     items: ["C++", "JavaScript", "Python"],
+    tone: "tone-languages",
+    level: "Strong",
   },
   {
     title: "Backend",
     icon: <ServerIcon />,
     items: ["Node.js", "Express", "REST APIs", "JWT", "WebSockets"],
+    tone: "tone-backend",
+    level: "Strongest",
   },
   {
     title: "Frontend",
     icon: <MenuIcon />,
     items: ["React", "HTML", "CSS"],
+    tone: "tone-frontend",
+    level: "Production-ready",
   },
   {
     title: "Database",
     icon: <ServerIcon />,
     items: ["MongoDB", "MySQL"],
+    tone: "tone-database",
+    level: "Comfortable",
   },
   {
     title: "Tools",
     icon: <TrophyIcon />,
     items: ["Git", "Postman", "AWS"],
+    tone: "tone-tools",
+    level: "Daily use",
   },
 ];
 
 const achievements = [
   {
     title: "LeetCode Consistency",
-    value: "400+ Problems",
-    description: "Solved 400+ DSA problems with strong focus on patterns and speed.",
+    value: "500+ Problems",
+    description: "Solved 500+ DSA problems with strong focus on patterns and speed.",
   },
   {
     title: "Contest Rating",
@@ -99,7 +109,7 @@ const achievements = [
   },
   {
     title: "Academic Record",
-    value: "8.93 CGPA",
+    value: "8.94 CGPA",
     description: "B.Tech in Computer Science and Engineering at KIIT.",
   },
 ];
@@ -112,8 +122,8 @@ const heroHighlights = [
 
 const updatedHeroStats = [
   { value: "2", label: "Production-ready projects" },
-  { value: "400+", label: "DSA problems solved" },
-  { value: "8.93", label: "CGPA at KIIT CSE" },
+  { value: "500+", label: "DSA problems solved" },
+  { value: "8.94", label: "CGPA at KIIT CSE" },
 ];
 
 const heroRoles = [
@@ -142,6 +152,9 @@ const contactLinks = [
     icon: <LinkedInIcon />,
   },
 ];
+
+const resumeUrl =
+  "https://raw.githubusercontent.com/Suraj1307/Portfolio/main/public/SurajKumar_Resume.pdf";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -237,8 +250,16 @@ function App() {
   }, [typedRole, isDeleting, roleIndex]);
 
   useEffect(() => {
+    setMenuOpen(false);
+  }, [activeSection]);
+
+  useEffect(() => {
     const onScroll = () => {
-      setShowScrollTop(window.scrollY > 500);
+      const scrollTrigger = Math.max(
+        320,
+        (document.documentElement.scrollHeight - window.innerHeight) * 0.3,
+      );
+      setShowScrollTop(window.scrollY > scrollTrigger);
     };
 
     onScroll();
@@ -260,7 +281,7 @@ function App() {
         menuOpen={menuOpen}
         onClose={closeMenu}
         onToggle={() => setMenuOpen((value) => !value)}
-        resumeHref="/SurajKumar_Resume.pdf"
+        resumeHref={resumeUrl}
       />
 
       <main>
@@ -285,7 +306,10 @@ function App() {
 
               <div className="hero-meta">
                 <span>Bhubaneswar, Odisha</span>
-                <span>Open to internships and developer roles</span>
+                <span className="status-pill">
+                  <i />
+                  Open to internships and developer roles
+                </span>
               </div>
 
               <div className="hero-actions">
@@ -307,7 +331,12 @@ function App() {
                   <LinkedInIcon />
                   LinkedIn
                 </a>
-                <a className="button secondary" href="/SurajKumar_Resume.pdf" download>
+                <a
+                  className="button secondary"
+                  href={resumeUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <ExternalLinkIcon />
                   Download Resume
                 </a>
@@ -350,7 +379,7 @@ function App() {
               <div className="about-image-shell">
                 <img
                   className="about-image"
-                  src="/avatar.svg"
+                  src="/profile-photo.jpeg"
                   alt="Suraj Kumar portrait"
                 />
               </div>
@@ -401,8 +430,8 @@ function App() {
               <p className="eyebrow">Skills</p>
               <h2>Technologies and tools I use to build production-focused software</h2>
               <p>
-                A concise backend-first stack, grouped in the same spirit as the
-                referenced portfolio template.
+                Backend, frontend, databases, and tooling grouped for fast recruiter
+                scanning, with simple confidence indicators.
               </p>
             </div>
 
@@ -410,14 +439,17 @@ function App() {
               <div className="skills-grid">
                 {skillGroups.map((group) => (
                   <article
-                    className="skill-card"
+                    className={`skill-card ${group.tone}`}
                     key={group.title}
                     data-reveal
                     style={{ transitionDelay: `${skillGroups.indexOf(group) * 70}ms` }}
                   >
                     <div className="skill-card-top">
                       <div className="skill-icon">{group.icon}</div>
-                      <h3>{group.title}</h3>
+                      <div className="skill-heading-copy">
+                        <h3>{group.title}</h3>
+                        <span className="skill-level">{group.level}</span>
+                      </div>
                     </div>
                     <div className="chip-wrap">
                       {group.items.map((item) => (
@@ -439,8 +471,8 @@ function App() {
               <p className="eyebrow">Achievements</p>
               <h2>Education and problem-solving proof points</h2>
               <p>
-                The GitHub template uses a structured resume-style flow, so this
-                section keeps your academic and coding achievements easy to scan.
+                Numbers that reinforce the projects with consistent coding practice
+                and academics.
               </p>
             </div>
 
