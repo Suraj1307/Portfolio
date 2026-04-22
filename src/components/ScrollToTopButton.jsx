@@ -8,9 +8,10 @@ function ScrollToTopButton({ show }) {
       aria-label="Scroll to top"
       className={`scroll-top ${show ? "visible" : ""}`}
       onClick={handleClick}
+      title="Back to top"
       type="button"
     >
-      ↑
+      <span aria-hidden="true">↑</span>
     </button>
   );
 }

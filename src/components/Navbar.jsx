@@ -33,7 +33,13 @@ function Navbar({ activeSection, links, menuOpen, onClose, onToggle, resumeHref,
               {link.label}
             </a>
           ))}
-          <a className="resume-link" href={resumeHref} onClick={onClose}>
+          <a
+            className="resume-link"
+            href={resumeHref}
+            onClick={onClose}
+            rel="noreferrer"
+            target="_blank"
+          >
             Resume
           </a>
         </nav>

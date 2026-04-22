@@ -14,6 +14,10 @@
   --nav-height: 82px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
@@ -778,6 +782,13 @@ textarea:focus-visible {
   line-height: 1.8;
 }
 
+.project-impact {
+  margin: 14px 0 8px;
+  color: #eef7ff !important;
+  font-weight: 600;
+  line-height: 1.7;
+}
+
 .project-card {
   overflow: hidden;
 }
@@ -787,6 +798,23 @@ textarea:focus-visible {
   aspect-ratio: 16 / 10;
   overflow: hidden;
   background: #0f0f0f;
+}
+
+.project-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(61, 132, 198, 0.38);
+  background: rgba(13, 20, 28, 0.9);
+  color: #eef7ff;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.24);
 }
 
 .project-media img {
@@ -948,7 +976,7 @@ textarea:focus-visible {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.2fr 0.9fr 0.8fr;
+  grid-template-columns: 1.2fr 0.9fr;
   gap: 24px;
 }
 

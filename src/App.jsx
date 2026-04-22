@@ -31,6 +31,7 @@ const projects = [
   {
     title: "ForgeChat",
     subtitle: "AI Powered Chat Application",
+    impact: "Shows AI product integration, auth design, and production full-stack delivery.",
     description:
       "ChatGPT-like full-stack web application with secure authentication, AI-powered conversations, and persistent chat history.",
     bullets: [
@@ -46,6 +47,7 @@ const projects = [
   {
     title: "Talk-Space",
     subtitle: "Real-Time Chat Application",
+    impact: "Shows real-time backend communication, secure auth, and scalable messaging flows.",
     description:
       "Production-ready real-time chat platform with secure authentication, instant messaging, and scalable backend APIs.",
     bullets: [
@@ -61,6 +63,7 @@ const projects = [
   {
     title: "StaySpot",
     subtitle: "Property Rental Platform",
+    impact: "Shows backend-heavy CRUD design, search/filtering, and deployment discipline.",
     description:
       "Full-stack property rental platform with role-based authentication, listing management, and production deployment.",
     bullets: [
@@ -76,6 +79,7 @@ const projects = [
   {
     title: "Emotion Classification",
     subtitle: "Attention-Based BiLSTM for Social Media",
+    impact: "Shows practical ML deployment, interpretable predictions, and end-to-end product thinking.",
     description:
       "Production-ready deep learning system for classifying emotions in noisy social media text with attention-based interpretability and interactive UI.",
     bullets: [
@@ -101,28 +105,35 @@ const skillGroups = [
   {
     title: "Backend",
     icon: <ServerIcon />,
-    items: ["Node.js", "Express", "REST APIs", "JWT", "WebSockets"],
+    items: ["Node.js", "Express.js", "REST APIs", "JWT", "WebSockets", "Socket.io"],
     tone: "tone-backend",
     level: "Strongest",
   },
   {
     title: "Frontend",
     icon: <MenuIcon />,
-    items: ["React", "HTML", "CSS"],
+    items: ["React", "HTML", "CSS", "Bootstrap", "EJS"],
     tone: "tone-frontend",
     level: "Production-ready",
   },
   {
     title: "Database",
     icon: <ServerIcon />,
-    items: ["MongoDB", "MySQL"],
+    items: ["MongoDB", "MySQL", "DB Indexing"],
     tone: "tone-database",
     level: "Comfortable",
   },
   {
+    title: "AI / ML",
+    icon: <TrophyIcon />,
+    items: ["TensorFlow", "Keras", "Gradio", "NumPy", "Pandas"],
+    tone: "tone-tools",
+    level: "Project-ready",
+  },
+  {
     title: "Tools",
     icon: <TrophyIcon />,
-    items: ["Git", "Postman", "AWS (deployment & cloud basics)"],
+    items: ["Git", "Postman", "Jest", "Render", "Google Maps API", "AWS (deployment & cloud basics)"],
     tone: "tone-tools",
     level: "Daily use",
   },
@@ -219,7 +230,7 @@ const updatedHeroStats = [
 
 const heroRoles = [
   "a Backend Developer",
-  "a Full-Stack Engineer",
+  "a Full-Stack Developer",
   "a Problem Solver",
 ];
 
@@ -244,16 +255,18 @@ const contactLinks = [
   },
 ];
 
-const resumeUrl =
-  "https://raw.githubusercontent.com/Suraj1307/Portfolio/main/public/SurajKumar_Resume.pdf";
+const resumeUrl = "/SurajKumar_Resume.pdf";
 
 const strongSkills = new Set([
   "Node.js",
-  "Express",
+  "Express.js",
   "MongoDB",
   "React",
   "JWT",
   "WebSockets",
+  "Socket.io",
+  "TensorFlow",
+  "Keras",
 ]);
 
 function App() {
@@ -717,7 +730,7 @@ function App() {
         </section>
       </main>
 
-      <Footer links={navLinks} />
+      <Footer />
       <ScrollToTopButton show={showScrollTop} />
     </div>
   );

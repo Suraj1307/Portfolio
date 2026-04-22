@@ -1,6 +1,6 @@
 import { EmailIcon, GitHubIcon, LinkedInIcon } from "./Icons";
 
-function Footer({ links }) {
+function Footer() {
   return (
     <footer className="footer">
       <div className="container footer-grid">
@@ -38,7 +38,7 @@ function Footer({ links }) {
         </div>
       </div>
       <div className="container footer-bottom">
-        <p>Copyright 2026 Suraj Kumar • Built with React & Vite</p>
+        <p>Copyright 2026 Suraj Kumar | Built with React & Vite</p>
       </div>
     </footer>
   );

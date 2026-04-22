@@ -4,6 +4,7 @@ function ProjectCard({ project }) {
   return (
     <article className="project-card" data-reveal>
       <div className="project-media">
+        <span className="project-badge">Featured Project</span>
         <img src={project.image} alt={`${project.title} project preview`} />
         <a
           className="project-image-link"
@@ -16,11 +17,11 @@ function ProjectCard({ project }) {
       </div>
 
       <div className="project-content">
-        <p className="project-label">Project</p>
         <h3>
           {project.title}
           <span>{project.subtitle}</span>
         </h3>
+        {project.impact ? <p className="project-impact">{project.impact}</p> : null}
         <p>{project.description}</p>
 
         <ul className="project-bullets">
