@@ -1,6 +1,6 @@
-function Navbar({ activeSection, links, menuOpen, onClose, onToggle, resumeHref }) {
+function Navbar({ activeSection, links, menuOpen, onClose, onToggle, resumeHref, scrolled }) {
   return (
-    <header className="navbar-shell">
+    <header className={`navbar-shell ${scrolled ? "scrolled" : ""}`}>
       <div className="container navbar">
         <a className="brand" href="#home" onClick={onClose}>
           <span className="brand-mark">SK</span>

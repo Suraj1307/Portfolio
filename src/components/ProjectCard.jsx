@@ -40,7 +40,7 @@ function ProjectCard({ project }) {
         <div className="project-actions">
           <a href={project.liveUrl} target="_blank" rel="noreferrer">
             <ExternalLinkIcon />
-            Live
+            Live Demo
           </a>
           <a href={project.githubUrl} target="_blank" rel="noreferrer">
             <GitHubIcon />

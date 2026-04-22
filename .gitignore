@@ -3,6 +3,8 @@ dist/
 _template_ref/
 ForgeChat/
 talkSpace/
+StaySpot/
+EmotionDetector/
 *.log
 SurajKumar_Resume .pdf
 pic.jpeg

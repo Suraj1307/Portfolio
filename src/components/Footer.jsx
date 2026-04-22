@@ -13,17 +13,6 @@ function Footer({ links }) {
         </div>
 
         <div>
-          <p className="footer-title">Quick Links</p>
-          <div className="footer-links">
-            {links.map((link) => (
-              <a href={`#${link.id}`} key={link.id}>
-                {link.label}
-              </a>
-            ))}
-          </div>
-        </div>
-
-        <div>
           <p className="footer-title">Connect</p>
           <div className="footer-socials">
             <a
@@ -49,7 +38,7 @@ function Footer({ links }) {
         </div>
       </div>
       <div className="container footer-bottom">
-        <p>Copyright 2026 Suraj Kumar</p>
+        <p>Copyright 2026 Suraj Kumar • Built with React & Vite</p>
       </div>
     </footer>
   );
