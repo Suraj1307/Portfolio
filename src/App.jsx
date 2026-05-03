@@ -29,6 +29,22 @@ const navLinks = [
 
 const projects = [
   {
+    title: "Real-Time Code Collaboration Platform",
+    subtitle: "Multi-User Collaborative Code Editor",
+    impact: "Shows advanced real-time systems work, CRDT-based sync, and AWS container deployment.",
+    description:
+      "Full-stack real-time collaborative code editor where multiple users can join a room and edit shared code simultaneously with reliable low-latency synchronization.",
+    bullets: [
+      "Built a collaborative editor with Socket.IO and Yjs so multiple users can edit the same code document in real time with conflict-free CRDT syncing.",
+      "Designed room-based collaboration flows with guest access, Express APIs, WebSocket integration, and frontend assets served from the backend container.",
+      "Dockerized the app and deployed it on AWS ECS Fargate behind an Application Load Balancer for consistent full-stack delivery in production.",
+    ],
+    tech: ["React", "Vite", "Node.js", "Express.js", "Socket.IO", "Yjs", "Docker", "AWS ECS"],
+    image: "/code-collaborator-real.png",
+    liveUrl: "http://docker-aws-alb-1031415497.eu-north-1.elb.amazonaws.com",
+    githubUrl: "https://github.com/Suraj1307/code-collab-app",
+  },
+  {
     title: "ForgeChat",
     subtitle: "AI Powered Chat Application",
     impact: "Shows AI product integration, auth design, and production full-stack delivery.",
@@ -223,7 +239,7 @@ const heroHighlights = [
 ];
 
 const updatedHeroStats = [
-  { value: "4", label: "Production-ready projects" },
+  { value: "5", label: "Production-ready projects" },
   { value: "500+", label: "DSA problems solved" },
   { value: "8.94", label: "CGPA at KIIT CSE" },
 ];
@@ -265,6 +281,7 @@ const strongSkills = new Set([
   "JWT",
   "WebSockets",
   "Socket.io",
+  "Docker",
   "TensorFlow",
   "Keras",
 ]);
