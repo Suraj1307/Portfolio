@@ -1,11 +1,4 @@
 node_modules/
 dist/
-_template_ref/
-ForgeChat/
-talkSpace/
-StaySpot/
-EmotionDetector/
-CodeCollaborator/
+coverage/
 *.log
-SurajKumar_Resume .pdf
-pic.jpeg

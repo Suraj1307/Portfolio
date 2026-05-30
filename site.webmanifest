@@ -1,0 +1,21 @@
+{
+  "name": "Suraj Kumar Portfolio",
+  "short_name": "Suraj",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f7f7f7",
+  "theme_color": "#0e2431",
+  "description": "Portfolio of Suraj Kumar featuring backend, full-stack, and real-time engineering projects.",
+  "icons": [
+    {
+      "src": "./assets/images/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "./assets/images/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}

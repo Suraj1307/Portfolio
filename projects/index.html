@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Project archive for Suraj Kumar featuring real-time, backend, and full-stack web applications.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#0e2431">
+  <link rel="stylesheet" href="./style.css">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  >
+  <link id="favicon" rel="shortcut icon" href="../assets/images/favicon.png" type="image/x-png">
+  <title>Projects | Suraj Kumar</title>
+</head>
+<body>
+  <header>
+    <a href="../" class="logo"><i class="fas fa-code"></i> Suraj</a>
+
+    <button id="menu" class="fas fa-bars" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-nav" type="button"></button>
+    <nav class="navbar" id="site-nav">
+      <ul>
+        <li><a href="../#home">Home</a></li>
+        <li><a href="../#about">About</a></li>
+        <li><a href="../#skills">Skills</a></li>
+        <li><a href="../#education">Education</a></li>
+        <li><a class="active" href="../#projects">Projects</a></li>
+        <li><a href="../#experience">Achievements</a></li>
+        <li><a href="../#certificates">Certificates</a></li>
+        <li><a href="../#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="work" id="projects">
+    <h2 class="heading"><i class="fas fa-laptop-code"></i> Projects <span>Built</span></h2>
+
+    <div id="filters" class="button-group">
+      <button class="btn is-checked" data-filter="*">All Projects</button>
+      <button class="btn" data-filter=".realtime">Real-Time</button>
+      <button class="btn" data-filter=".fullstack">Full-Stack</button>
+    </div>
+
+    <div class="box-container"></div>
+
+    <div class="backbtn">
+      <a href="../#projects" class="btn">
+        <i class="fas fa-arrow-left"></i>
+        <span>Back to Home</span>
+      </a>
+    </div>
+  </section>
+
+  <a href="#projects" class="fas fa-angle-up" id="scroll-top"></a>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js" integrity="sha512-SttpKhJqONuBVxbRcuH0wezjuX+BoFoli0yPsnrAADcHsQMW8rkR84ItFHGIkPvhnlRnE2FaifDOUw+EltbuHg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha512-Zq2BOxyhvnRFXu0+WE6ojpZLOU2jdnqbrM1hmVdGzyeCa1DgM3X5Q4A/Is9xA1IkbUeDd7755dNNI/PzSf2Pew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="./script.js"></script>
+</body>
+</html>

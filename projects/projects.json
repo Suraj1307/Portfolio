@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Real-Time Code Collaboration Platform",
+    "desc": "Collaborative code editor built with React, Node.js, Express, Socket.IO, Yjs, Docker, and AWS ECS for low-latency real-time editing.",
+    "image": "code-collaborator",
+    "category": "realtime",
+    "links": {
+      "view": "https://github.com/Suraj1307/CodeCollaborator",
+      "code": "https://github.com/Suraj1307/CodeCollaborator"
+    }
+  },
+  {
+    "name": "ForgeChat - AI Powered Chat Application",
+    "desc": "ChatGPT-style AI web application with secure authentication, backend REST APIs, MongoDB schema design, and deployed routing support.",
+    "image": "forgechat",
+    "category": "fullstack",
+    "links": {
+      "view": "https://forge-chat-2.onrender.com",
+      "code": "https://github.com/Suraj1307/ForgeChat"
+    }
+  },
+  {
+    "name": "Talk-Space - Real-Time Messaging Platform",
+    "desc": "Real-time messaging platform using React, Node.js, Express, MongoDB, and Socket.IO with JWT authentication and message delivery workflows.",
+    "image": "talk-space",
+    "category": "fullstack",
+    "links": {
+      "view": "https://talk-space-z1i1.onrender.com",
+      "code": "https://github.com/Suraj1307/Talk-Space"
+    }
+  },
+  {
+    "name": "StaySpot",
+    "desc": "Full-stack listing and booking-style web application with end-to-end UI flows, listing management, and production-style deployment setup.",
+    "image": "stayspot",
+    "category": "fullstack",
+    "links": {
+      "view": "http://35.154.160.131:8080/listings",
+      "code": "https://github.com/Suraj1307/StaySpot"
+    }
+  },
+  {
+    "name": "Emotion Classification App",
+    "desc": "AI-powered emotion detection app that classifies user text into interpretable emotional categories through an interactive web interface.",
+    "image": "emotion-detector",
+    "category": "fullstack",
+    "links": {
+      "view": "https://huggingface.co/spaces/SurajAI2025/Emotion",
+      "code": "https://github.com/Suraj1307/EmotionDetector"
+    }
+  }
+]
