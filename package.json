@@ -1,0 +1,13 @@
+{
+  "name": "suraj-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Node-served static portfolio for Suraj Kumar",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

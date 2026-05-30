@@ -4,10 +4,18 @@ Static portfolio website based on the visual structure of `jigar-sable/Portfolio
 
 ## Run locally
 
-Use any static file server from the project root. With Node.js:
+Run with Node.js from the project root:
 
 ```bash
-npx serve .
+npm install
+npm start
 ```
 
-Then open the local URL printed in the terminal, usually `http://localhost:3000`.
+Then open `http://localhost:3000` locally.
+
+## Render web service
+
+If you want the previous Render web-service deployment style, use:
+
+- Build Command: `npm install`
+- Start Command: `npm start`
