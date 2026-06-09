@@ -238,6 +238,17 @@ header .navbar ul li a:hover {
 .home .image img:hover {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
+@media (max-width: 991px) {
+  .home .image,
+  .home .image img {
+    display: none !important;
+  }
+}
+@media (min-width: 992px) {
+  .home .image {
+    display: block !important;
+  }
+}
 .home .content h2 {
   font-size: 5rem;
   font-weight: 800;
