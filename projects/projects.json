@@ -5,7 +5,7 @@
     "image": "code-collaborator",
     "category": "realtime",
     "links": {
-      "view": "https://github.com/Suraj1307/CodeCollaborator",
+      "view": "http://docker-aws-alb-1031415497.eu-north-1.elb.amazonaws.com/",
       "code": "https://github.com/Suraj1307/CodeCollaborator"
     }
   },
@@ -15,7 +15,7 @@
     "image": "forgechat",
     "category": "fullstack",
     "links": {
-      "view": "https://forge-chat-2.onrender.com",
+      "view": "https://forgechat.onrender.com",
       "code": "https://github.com/Suraj1307/ForgeChat"
     }
   },
