@@ -353,6 +353,14 @@ header .navbar ul li a:focus-visible,
 .social-icons a.linkedin:hover {
   background-color: #007bb6;
 }
+.social-icons a.leetcode {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.04rem;
+}
+.social-icons a.leetcode:hover {
+  background-color: #ffa116;
+}
 .social-icons a.dev:hover {
   background-color: #070707;
 }
