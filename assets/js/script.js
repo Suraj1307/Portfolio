@@ -136,12 +136,12 @@ document.addEventListener("visibilitychange", () => {
   const favicon = document.getElementById("favicon");
   if (document.visibilityState === "visible") {
     document.title = "Suraj Kumar | Backend & Full-Stack Developer";
-    favicon.setAttribute("href", "assets/images/favicon.png");
+    favicon.setAttribute("href", "/assets/images/favicon.png");
     return;
   }
 
   document.title = "Come Back | Suraj Kumar";
-  favicon.setAttribute("href", "assets/images/favhand.png");
+  favicon.setAttribute("href", "/assets/images/favhand.png");
 });
 
 if (!prefersReducedMotion && window.Typed) {
@@ -207,7 +207,7 @@ const counterObserver = new IntersectionObserver(
 document.querySelectorAll("[data-count]").forEach(counter => counterObserver.observe(counter));
 
 async function fetchData(type = "skills") {
-  const response = await fetch(type === "skills" ? "./skills.json" : "./projects/projects.json");
+  const response = await fetch(type === "skills" ? "/skills.json" : "/projects/projects.json");
 
   if (!response.ok) {
     throw new Error(`Failed to load ${type}.`);
@@ -278,7 +278,7 @@ function renderProjects() {
       return `
         <article class="project-card ${index === 0 && activeProjectFilter === "all" ? "project-card--featured" : ""}">
           <div class="project-card__media">
-            <img src="./assets/images/projects/${project.image}.png" alt="${project.name}" loading="lazy">
+            <img src="/assets/images/projects/${project.image}.png" alt="${project.name}" loading="lazy">
             <span class="project-card__badge">${formatCategory(project.category)}</span>
           </div>
           <div class="project-card__body">
