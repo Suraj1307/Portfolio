@@ -1,150 +1,103 @@
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-const body = document.body;
-const header = document.getElementById("site-header");
-const nav = document.getElementById("site-nav");
-const navToggle = document.getElementById("mobile-nav-toggle");
-const navLinks = Array.from(document.querySelectorAll(".site-nav a"));
-const scrollTopLink = document.getElementById("scroll-top");
-const contactForm = document.getElementById("contact-form");
-const formStatus = document.getElementById("form-status");
-const skillsContainer = document.getElementById("skillsContainer");
-const projectGrid = document.getElementById("projectGrid");
-const projectFilters = document.getElementById("projectFilters");
-const revealElements = Array.from(document.querySelectorAll(".reveal"));
 
-const skillCategories = {
-  Languages: ["JavaScript (ES6+)", "C++", "SQL"],
-  Frontend: ["React.js", "HTML", "CSS", "Vite"],
-  Backend: ["Node.js", "Express.js", "REST APIs", "Socket.IO", "JWT Authentication"],
-  Database: ["MongoDB", "MySQL"],
-  Cloud: ["Docker", "AWS (ECS, Fargate, ALB)"],
-  Tools: ["Git", "GitHub", "Postman"]
-};
-
-const technologyKeywords = [
-  "React",
-  "Node.js",
-  "Express",
-  "Socket.IO",
-  "Yjs",
-  "Docker",
-  "AWS ECS",
-  "MongoDB",
-  "JWT",
-  "Vite",
-  "REST APIs",
-  "MySQL",
-  "AI"
-];
-
-let projectsCache = [];
-let activeProjectFilter = "all";
-
-function setNavOpen(isOpen) {
-  body.classList.toggle("nav-open", isOpen);
-  navToggle.setAttribute("aria-expanded", String(isOpen));
-  const icon = navToggle.querySelector("i");
-  if (icon) {
-    icon.className = isOpen ? "fas fa-times" : "fas fa-bars";
-  }
-}
-
-if (navToggle) {
-  navToggle.addEventListener("click", () => {
-    setNavOpen(!body.classList.contains("nav-open"));
+$(document).ready(function () {
+  $("#menu").click(function () {
+    $(this).toggleClass("fa-times");
+    $(".navbar").toggleClass("nav-toggle");
+    $(this).attr("aria-expanded", $(".navbar").hasClass("nav-toggle"));
   });
-}
 
-navLinks.forEach(link => {
-  link.addEventListener("click", event => {
-    const targetId = link.getAttribute("href");
-    const target = targetId ? document.querySelector(targetId) : null;
+  $(window).on("scroll load", function () {
+    $("#menu").removeClass("fa-times");
+    $(".navbar").removeClass("nav-toggle");
+    $("#menu").attr("aria-expanded", "false");
 
-    if (target) {
-      event.preventDefault();
-      const offset = header.offsetHeight;
-      const top = target.getBoundingClientRect().top + window.scrollY - offset + 1;
-      window.scrollTo({ top, behavior: prefersReducedMotion ? "auto" : "smooth" });
+    if (window.scrollY > 60) {
+      document.querySelector("#scroll-top").classList.add("active");
+    } else {
+      document.querySelector("#scroll-top").classList.remove("active");
     }
 
-    if (window.innerWidth <= 900) {
-      setNavOpen(false);
-    }
-  });
-});
+    $("section").each(function () {
+      const height = $(this).height();
+      const offset = $(this).offset().top - 200;
+      const top = $(window).scrollTop();
+      const id = $(this).attr("id");
 
-document.addEventListener("click", event => {
-  if (window.innerWidth > 900 || !body.classList.contains("nav-open")) {
-    return;
-  }
-
-  if (!nav.contains(event.target) && !navToggle.contains(event.target)) {
-    setNavOpen(false);
-  }
-});
-
-window.addEventListener("resize", () => {
-  if (window.innerWidth > 900) {
-    setNavOpen(false);
-  }
-});
-
-window.addEventListener("scroll", () => {
-  header.classList.toggle("scrolled", window.scrollY > 24);
-  scrollTopLink.classList.toggle("active", window.scrollY > 320);
-});
-
-const sectionObserver = new IntersectionObserver(
-  entries => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) {
-        return;
+      if (top > offset && top < offset + height) {
+        $(".navbar ul li a").removeClass("active");
+        $('.navbar').find(`[href="#${id}"]`).addClass("active");
       }
-
-      navLinks.forEach(link => {
-        link.classList.toggle("active", link.getAttribute("href") === `#${entry.target.id}`);
-      });
     });
-  },
-  {
-    threshold: 0.5,
-    rootMargin: "-15% 0px -35% 0px"
-  }
-);
+  });
 
-document.querySelectorAll("main section[id]").forEach(section => sectionObserver.observe(section));
+  $('a[href*="#"]').on("click", function (event) {
+    const target = $(this).attr("href");
+    if (!target || !target.startsWith("#")) {
+      return;
+    }
 
-if (!prefersReducedMotion) {
-  const revealObserver = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.18 }
-  );
+    const destination = $(target);
+    if (!destination.length) {
+      return;
+    }
 
-  revealElements.forEach(element => revealObserver.observe(element));
-} else {
-  revealElements.forEach(element => element.classList.add("is-visible"));
-}
+    event.preventDefault();
 
-document.addEventListener("visibilitychange", () => {
-  const favicon = document.getElementById("favicon");
+    if (prefersReducedMotion) {
+      window.location.hash = target;
+      return;
+    }
+
+    $("html, body").animate({scrollTop: destination.offset().top}, 500, "linear");
+  });
+
+  $("#contact-form").on("submit", function (event) {
+    event.preventDefault();
+
+    const name = $('input[name="name"]').val().trim();
+    const email = $('input[name="email"]').val().trim();
+    const phone = $('input[name="phone"]').val().trim();
+    const message = $('textarea[name="message"]').val().trim();
+    const status = $("#form-status");
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!name || !email || !message) {
+      status.text("Please complete your name, email, and message before sending.");
+      return;
+    }
+
+    if (!emailPattern.test(email)) {
+      status.text("Please enter a valid email address before sending.");
+      return;
+    }
+
+    const subject = encodeURIComponent(`Portfolio Inquiry from ${name}`);
+    const body = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`
+    );
+
+    status.html(
+      'Opening your email app. If nothing happens, email <a href="mailto:surajrajnkh1244@gmail.com">surajrajnkh1244@gmail.com</a> directly.'
+    );
+
+    window.location.href = `mailto:surajrajnkh1244@gmail.com?subject=${subject}&body=${body}`;
+    this.reset();
+  });
+});
+
+document.addEventListener("visibilitychange", function () {
   if (document.visibilityState === "visible") {
     document.title = "Suraj Kumar | Backend & Full-Stack Developer";
-    favicon.setAttribute("href", "assets/images/favicon.png");
-    return;
+    $("#favicon").attr("href", "assets/images/favicon.png");
+  } else {
+    document.title = "Come Back | Suraj Kumar";
+    $("#favicon").attr("href", "assets/images/favhand.png");
   }
-
-  document.title = "Come Back | Suraj Kumar";
-  favicon.setAttribute("href", "assets/images/favhand.png");
 });
 
-if (!prefersReducedMotion && window.Typed) {
+if (!prefersReducedMotion) {
   new Typed(".typing-text", {
     strings: [
       "backend development",
@@ -153,212 +106,121 @@ if (!prefersReducedMotion && window.Typed) {
       "REST APIs",
       "scalable web applications"
     ],
-    typeSpeed: 48,
-    backSpeed: 24,
-    backDelay: 1000,
-    loop: true
+    loop: true,
+    typeSpeed: 50,
+    backSpeed: 25,
+    backDelay: 500
   });
 } else {
-  const typingTarget = document.querySelector(".typing-text");
-  if (typingTarget) {
-    typingTarget.textContent = "backend development";
+  const typingElement = document.querySelector(".typing-text");
+  if (typingElement) {
+    typingElement.textContent = "backend development";
   }
 }
-
-function animateCount(element) {
-  const rawTarget = Number(element.dataset.count);
-  if (!rawTarget || prefersReducedMotion) {
-    return;
-  }
-
-  const suffix = element.textContent.trim().replace(/[0-9.]/g, "");
-  const duration = 1200;
-  const startTime = performance.now();
-
-  function tick(currentTime) {
-    const progress = Math.min((currentTime - startTime) / duration, 1);
-    const value = Math.floor(rawTarget * progress);
-    element.textContent = `${value}${suffix}`;
-
-    if (progress < 1) {
-      requestAnimationFrame(tick);
-    } else {
-      element.textContent = `${rawTarget}${suffix}`;
-    }
-  }
-
-  requestAnimationFrame(tick);
-}
-
-const counterObserver = new IntersectionObserver(
-  entries => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) {
-        return;
-      }
-
-      animateCount(entry.target);
-      counterObserver.unobserve(entry.target);
-    });
-  },
-  { threshold: 0.7 }
-);
-
-document.querySelectorAll("[data-count]").forEach(counter => counterObserver.observe(counter));
 
 async function fetchData(type = "skills") {
-  const response = await fetch(type === "skills" ? "./skills.json" : "./projects/projects.json");
-
-  if (!response.ok) {
-    throw new Error(`Failed to load ${type}.`);
-  }
+  const response =
+    type === "skills"
+      ? await fetch("skills.json")
+      : await fetch("./projects/projects.json");
 
   return response.json();
 }
 
-function renderSkills(skills) {
-  const skillMap = new Map(skills.map(skill => [skill.name, skill]));
+function showSkills(skills) {
+  const skillsContainer = document.getElementById("skillsContainer");
+  let skillHTML = "";
 
-  skillsContainer.innerHTML = Object.entries(skillCategories)
-    .map(([category, names]) => {
-      const items = names
-        .map(name => skillMap.get(name))
-        .filter(Boolean)
-        .map(
-          skill => `
-            <li>
-              <img src="${skill.icon}" alt="" aria-hidden="true">
-              <span>${skill.name}</span>
-            </li>
-          `
-        )
-        .join("");
+  skills.forEach(skill => {
+    skillHTML += `
+      <div class="bar">
+        <div class="info">
+          <img src="${skill.icon}" alt="${skill.name}" />
+          <span>${skill.name}</span>
+        </div>
+      </div>`;
+  });
 
-      return `
-        <article class="skills-group">
-          <h3>${category}</h3>
-          <ul>${items}</ul>
-        </article>
-      `;
-    })
-    .join("");
+  skillsContainer.innerHTML = skillHTML;
 }
 
-function formatCategory(category) {
-  return category.replace(/-/g, " ");
-}
+function showProjects(projects) {
+  const projectsContainer = document.querySelector("#projects .box-container");
+  let projectHTML = "";
 
-function extractTechStack(project) {
-  const stack = technologyKeywords.filter(keyword => project.desc.includes(keyword));
-  return stack.length ? stack : [formatCategory(project.category)];
-}
-
-function renderProjectFilters(projects) {
-  const categories = ["all", ...new Set(projects.map(project => project.category))];
-  projectFilters.innerHTML = categories
-    .map(category => {
-      const label = category === "all" ? "all" : formatCategory(category);
-      return `<button type="button" data-filter="${category}" class="${category === activeProjectFilter ? "active" : ""}">${label}</button>`;
-    })
-    .join("");
-}
-
-function renderProjects() {
-  const visibleProjects =
-    activeProjectFilter === "all"
-      ? projectsCache
-      : projectsCache.filter(project => project.category === activeProjectFilter);
-
-  projectGrid.innerHTML = visibleProjects
-    .map((project, index) => {
-      const stackItems = extractTechStack(project)
-        .map(tech => `<li>${tech}</li>`)
-        .join("");
-
-      return `
-        <article class="project-card ${index === 0 && activeProjectFilter === "all" ? "project-card--featured" : ""}">
-          <div class="project-card__media">
-            <img src="./assets/images/projects/${project.image}.png" alt="${project.name}" loading="lazy">
-            <span class="project-card__badge">${formatCategory(project.category)}</span>
+  projects.forEach(project => {
+    projectHTML += `
+      <div class="box tilt">
+        <img draggable="false" src="./assets/images/projects/${project.image}.png" alt="${project.name}" loading="lazy" />
+        <div class="content">
+          <div class="tag">
+            <h3>${project.name}</h3>
           </div>
-          <div class="project-card__body">
-            <div class="project-card__header">
-              <h3>${project.name}</h3>
-              <span class="project-card__label">${index === 0 && activeProjectFilter === "all" ? "Featured" : "Project"}</span>
-            </div>
+          <div class="desc">
             <p>${project.desc}</p>
-            <ul class="project-card__stack">${stackItems}</ul>
-            <div class="project-card__actions">
-              <a href="${project.links.view}" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-              <a href="${project.links.code}" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+            <div class="btns">
+              <a href="${project.links.view}" class="btn" target="_blank" rel="noopener noreferrer"><i class="fas fa-eye"></i> View</a>
+              <a href="${project.links.code}" class="btn" target="_blank" rel="noopener noreferrer">Code <i class="fas fa-code"></i></a>
             </div>
           </div>
-        </article>
-      `;
-    })
-    .join("");
+        </div>
+      </div>`;
+  });
+
+  projectsContainer.innerHTML = projectHTML;
+
+  if (!prefersReducedMotion) {
+    VanillaTilt.init(document.querySelectorAll(".tilt"), {
+      max: 15
+    });
+  }
+
+  if (!prefersReducedMotion) {
+    const srtop = ScrollReveal({
+      origin: "top",
+      distance: "80px",
+      duration: 1000,
+      reset: true
+    });
+
+    srtop.reveal(".work .box", {interval: 200});
+  }
 }
 
-if (projectFilters) {
-  projectFilters.addEventListener("click", event => {
-    const button = event.target.closest("button[data-filter]");
-    if (!button) {
-      return;
-    }
+fetchData().then(showSkills);
+fetchData("projects").then(showProjects);
 
-    activeProjectFilter = button.dataset.filter;
-    renderProjectFilters(projectsCache);
-    renderProjects();
+if (!prefersReducedMotion) {
+  VanillaTilt.init(document.querySelectorAll(".tilt"), {
+    max: 15
   });
+
+  const srtop = ScrollReveal({
+    origin: "top",
+    distance: "80px",
+    duration: 1000,
+    reset: true
+  });
+
+  srtop.reveal(".home .content h2", {delay: 200});
+  srtop.reveal(".home .content p", {delay: 200});
+  srtop.reveal(".home .content .btn", {delay: 200});
+  srtop.reveal(".home .image", {delay: 400});
+  srtop.reveal(".home .linkedin", {interval: 600});
+  srtop.reveal(".home .github", {interval: 800});
+  srtop.reveal(".home .gmail", {interval: 1000});
+  srtop.reveal(".home .resume", {interval: 1200});
+  srtop.reveal(".about .content h3", {delay: 200});
+  srtop.reveal(".about .content .tag", {delay: 200});
+  srtop.reveal(".about .content p", {delay: 200});
+  srtop.reveal(".about .content .box-container", {delay: 200});
+  srtop.reveal(".about .content .resumebtn", {delay: 200});
+  srtop.reveal(".skills .container", {interval: 200});
+  srtop.reveal(".skills .container .bar", {delay: 400});
+  srtop.reveal(".education .box", {interval: 200});
+  srtop.reveal(".experience .timeline", {delay: 400});
+  srtop.reveal(".experience .timeline .container", {interval: 400});
+  srtop.reveal(".certificates .box", {interval: 200});
+  srtop.reveal(".contact .container", {delay: 400});
+  srtop.reveal(".contact .container .form-group", {delay: 400});
 }
-
-if (contactForm) {
-  contactForm.addEventListener("submit", event => {
-    event.preventDefault();
-
-    const formData = new FormData(contactForm);
-    const name = String(formData.get("name") || "").trim();
-    const email = String(formData.get("email") || "").trim();
-    const phone = String(formData.get("phone") || "").trim();
-    const message = String(formData.get("message") || "").trim();
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (!name || !email || !message) {
-      formStatus.textContent = "Please complete your name, email, and message before sending.";
-      return;
-    }
-
-    if (!emailPattern.test(email)) {
-      formStatus.textContent = "Please enter a valid email address before sending.";
-      return;
-    }
-
-    const subject = encodeURIComponent(`Portfolio Inquiry from ${name}`);
-    const bodyText = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`
-    );
-
-    formStatus.innerHTML =
-      'Opening your email app. If nothing happens, email <a href="mailto:surajrajnkh1244@gmail.com">surajrajnkh1244@gmail.com</a> directly.';
-
-    window.location.href = `mailto:surajrajnkh1244@gmail.com?subject=${subject}&body=${bodyText}`;
-    contactForm.reset();
-  });
-}
-
-Promise.all([fetchData("skills"), fetchData("projects")])
-  .then(([skills, projects]) => {
-    renderSkills(skills);
-    projectsCache = projects;
-    renderProjectFilters(projects);
-    renderProjects();
-  })
-  .catch(error => {
-    console.error(error);
-    if (skillsContainer) {
-      skillsContainer.innerHTML = '<p class="form-status">Unable to load skills right now.</p>';
-    }
-    if (projectGrid) {
-      projectGrid.innerHTML = '<p class="form-status">Unable to load projects right now.</p>';
-    }
-  });
