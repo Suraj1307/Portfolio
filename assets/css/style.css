@@ -1025,7 +1025,7 @@ textarea {
 }
 
 .site-footer p,
-.site-footer a {
+.site-footer__grid > div > a {
   display: block;
   margin-top: 1rem;
   color: var(--muted);
@@ -1033,8 +1033,10 @@ textarea {
   line-height: 1.8;
 }
 
-.site-footer a:hover,
-.site-footer a:focus-visible {
+.site-footer__grid > div > a:hover,
+.site-footer__grid > div > a:focus-visible,
+.site-footer__credit a:hover,
+.site-footer__credit a:focus-visible {
   color: var(--accent);
 }
 
@@ -1043,6 +1045,11 @@ textarea {
   flex-wrap: wrap;
   gap: 1rem;
   margin-top: 1.4rem;
+}
+
+.site-footer__socials a {
+  margin-top: 0;
+  flex-shrink: 0;
 }
 
 .site-footer__credit {
