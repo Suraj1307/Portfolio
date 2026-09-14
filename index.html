@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Suraj Kumar">
   <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#0e2431">
+  <meta name="theme-color" content="#050505">
   <meta
     name="keywords"
     content="Suraj Kumar, portfolio, backend developer, full stack developer, React, Node.js, MongoDB, Socket.IO, KIIT"
@@ -27,6 +27,9 @@
   <meta name="twitter:image" content="https://suraj1307.github.io/Portfolio/assets/images/hero.png">
   <link rel="canonical" href="https://suraj1307.github.io/Portfolio/">
   <link rel="manifest" href="./site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap">
   <link rel="stylesheet" href="./assets/css/style.css">
   <link
     rel="stylesheet"
@@ -78,276 +81,319 @@
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
-  <header>
-    <a href="./" class="logo"><i class="fas fa-code"></i> Suraj</a>
 
-    <button id="menu" class="fas fa-bars" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-nav" type="button"></button>
-    <nav class="navbar" id="site-nav">
-      <ul>
-        <li><a class="active" href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#experience">Achievements</a></li>
-        <li><a href="#certificates">Certificates</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+  <header class="site-header" id="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="#home">Suraj.</a>
+
+      <button
+        class="mobile-nav-toggle"
+        id="mobile-nav-toggle"
+        type="button"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+        aria-controls="site-nav"
+      >
+        <i class="fas fa-bars" aria-hidden="true"></i>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <a class="active" href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Achievements</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
   </header>
 
   <main id="main-content">
-  <section class="home" id="home">
-    <div id="particles-js"></div>
-
-    <div class="content">
-      <h2>Hi There,<br>I'm Suraj <span>Kumar</span></h2>
-      <p>I build <span class="typing-text"></span></p>
-      <a href="#about" class="btn"><span>About Me</span>
-        <i class="fas fa-arrow-circle-down"></i>
-      </a>
-      <div class="socials">
-        <ul class="social-icons">
-          <li><a class="linkedin" aria-label="LinkedIn" href="https://www.linkedin.com/in/suraj-kumar-a59915285" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a></li>
-          <li><a class="github" aria-label="GitHub" href="https://github.com/Suraj1307" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a></li>
-          <li><a class="leetcode" aria-label="LeetCode" href="https://leetcode.com/u/Suraj_2909/" target="_blank" rel="noopener noreferrer"><span>LC</span></a></li>
-          <li><a class="gmail" aria-label="Email" href="mailto:surajrajnkh1244@gmail.com"><i class="fas fa-envelope"></i></a></li>
-          <li><a class="resume" aria-label="Resume" href="./assets/Suraj-Kumar-Resume.pdf" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-alt"></i></a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="image">
-      <img draggable="false" class="tilt" src="./assets/images/hero.png" alt="Developer illustration" fetchpriority="high">
-    </div>
-  </section>
-
-  <section class="about" id="about">
-    <h2 class="heading"><i class="fas fa-user-alt"></i> About <span>Me</span></h2>
-
-    <div class="row">
-      <div class="image">
-        <img draggable="false" class="tilt" src="./assets/images/profile2.jpg" alt="Suraj Kumar portrait" loading="lazy">
-      </div>
-      <div class="content">
-        <h3>I'm Suraj</h3>
-        <span class="tag">Computer Science Undergraduate | Backend & Full-Stack Developer</span>
-
-        <p>
-          Computer Science undergraduate from Kalinga Institute of Industrial
-          Technology specializing in backend and full-stack development.
-          Experienced in building scalable real-time web applications using the
-          MERN stack, WebSockets, Docker, and AWS cloud technologies.
-        </p>
-        <p>
-          Strong foundation in REST API design, authentication systems, database
-          management, data structures and algorithms. I enjoy solving practical
-          product problems with clean engineering and reliable systems thinking.
-        </p>
-
-        <div class="box-container">
-          <div class="box">
-            <p><span> phone : </span> +91-8789162493</p>
-            <p><span> email : </span> surajrajnkh1244@gmail.com</p>
-            <p><span> place : </span> Bhubaneswar, Odisha, India</p>
-            <p><span> cgpa : </span> 8.98 / 10</p>
+    <section class="hero reveal" id="home">
+      <div class="hero__backdrop" aria-hidden="true"></div>
+      <div class="hero__grid">
+        <div class="hero__content">
+          <p class="hero__eyebrow">Hi There,</p>
+          <h1>I'm Suraj <span>Kumar</span></h1>
+          <p class="hero__title">I build <span class="typing-text">backend development</span></p>
+          <p class="hero__lede">
+            Backend &amp; Full-Stack Developer crafting scalable web applications,
+            real-time systems, and clean product experiences with engineering depth.
+          </p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="#projects">View My Work</a>
+            <a class="button button--outline" href="./assets/Suraj-Kumar-Resume.pdf" target="_blank" rel="noopener noreferrer">Download Resume</a>
+            <a class="button button--ghost" href="#contact">Contact Me</a>
+          </div>
+          <div class="hero__socials" aria-label="Social links">
+            <a href="https://www.linkedin.com/in/suraj-kumar-a59915285" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/Suraj1307" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+            <a href="https://leetcode.com/u/Suraj_2909/" aria-label="LeetCode" target="_blank" rel="noopener noreferrer"><span>LC</span></a>
+            <a href="mailto:surajrajnkh1244@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            <a href="./assets/Suraj-Kumar-Resume.pdf" aria-label="Resume" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-alt"></i></a>
           </div>
         </div>
 
-        <div class="resumebtn">
-          <a href="./assets/Suraj-Kumar-Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn"><span>Resume</span>
-            <i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="skills" id="skills">
-    <h2 class="heading"><i class="fas fa-laptop-code"></i> Skills & <span>Abilities</span></h2>
-
-    <div class="container">
-      <div class="row" id="skillsContainer"></div>
-    </div>
-  </section>
-
-  <section class="education" id="education">
-    <h1 class="heading"><i class="fas fa-graduation-cap"></i> My <span>Education</span></h1>
-
-    <p class="qoute">Strong fundamentals make ambitious engineering work possible.</p>
-
-    <div class="box-container">
-      <div class="box">
-        <div class="content">
-          <h3>B.Tech in Computer Science & Engineering</h3>
-          <p>Kalinga Institute of Industrial Technology, Bhubaneswar</p>
-          <h4>2023 - Present | CGPA: 8.98</h4>
-        </div>
-      </div>
-
-      <div class="box">
-        <div class="content">
-          <h3>Senior Secondary Education</h3>
-          <p>S T Raza International School (CBSE) | Class XII: 83.8%</p>
-          <h4>2022 | Completed</h4>
-        </div>
-      </div>
-
-      <div class="box">
-        <div class="content">
-          <h3>Secondary Education</h3>
-          <p>CBSE Board | Class X: 89.4%</p>
-          <h4>Completed</h4>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="work" id="projects">
-    <h2 class="heading"><i class="fas fa-laptop-code"></i> Projects <span>Built</span></h2>
-
-    <div class="box-container"></div>
-
-    <div class="viewall">
-      <a href="#experience" class="btn"><span>See Achievements</span>
-        <i class="fas fa-arrow-right"></i>
-      </a>
-    </div>
-  </section>
-
-  <section class="experience" id="experience">
-    <h2 class="heading"><i class="fas fa-trophy"></i> Achievements </h2>
-
-    <div class="timeline">
-      <div class="container right">
-        <div class="content">
-          <div class="tag">
-            <h2>LeetCode</h2>
+        <div class="hero__visual">
+          <div class="hero__portrait">
+            <img src="./assets/images/profile2.jpg" alt="Suraj Kumar portrait" fetchpriority="high">
           </div>
-          <div class="desc">
-            <h3>600+ DSA Problems Solved</h3>
-            <p>Covered Graphs, Dynamic Programming, Greedy, and other core problem-solving topics.</p>
+          <div class="hero__metrics">
+            <article>
+              <strong data-count="600">600+</strong>
+              <span>DSA Problems Solved</span>
+            </article>
+            <article>
+              <strong data-count="1600">1600+</strong>
+              <span>LeetCode Rating</span>
+            </article>
+            <article>
+              <strong>8.98</strong>
+              <span>Current CGPA</span>
+            </article>
           </div>
         </div>
       </div>
+    </section>
 
-      <div class="container left">
-        <div class="content">
-          <div class="tag">
-            <h2>LeetCode Contest Rating</h2>
+    <section class="section about reveal" id="about">
+      <div class="section-heading">
+        <p>About</p>
+        <h2>Backend-first engineering with a full-stack execution mindset.</h2>
+      </div>
+
+      <div class="about__grid">
+        <div class="about__media">
+          <img src="./assets/images/hero.png" alt="Developer illustration" loading="lazy">
+        </div>
+        <div class="about__content">
+          <h3>I'm Suraj</h3>
+          <span class="about__tag">Computer Science Undergraduate | Backend &amp; Full-Stack Developer</span>
+          <p>
+            Computer Science undergraduate from Kalinga Institute of Industrial
+            Technology specializing in backend and full-stack development.
+            Experienced in building scalable real-time web applications using the
+            MERN stack, WebSockets, Docker, and AWS cloud technologies.
+          </p>
+          <p>
+            Strong foundation in REST API design, authentication systems, database
+            management, data structures and algorithms. I enjoy solving practical
+            product problems with clean engineering and reliable systems thinking.
+          </p>
+
+          <div class="about__cards">
+            <article>
+              <span>CGPA</span>
+              <strong>8.98 / 10</strong>
+            </article>
+            <article>
+              <span>Education</span>
+              <strong>B.Tech CSE, KIIT</strong>
+            </article>
+            <article>
+              <span>Location</span>
+              <strong>Bhubaneswar, Odisha, India</strong>
+            </article>
+            <article>
+              <span>Role</span>
+              <strong>Backend &amp; Full-Stack Developer</strong>
+            </article>
           </div>
-          <div class="desc">
-            <h3>1600+ Rating</h3>
-            <p>Ranked in the top 22% globally through consistent competitive programming performance.</p>
+
+          <div class="about__meta">
+            <p><span>Phone:</span> +91-8789162493</p>
+            <p><span>Email:</span> surajrajnkh1244@gmail.com</p>
+            <p><span>Place:</span> Bhubaneswar, Odisha, India</p>
+            <p><span>GitHub:</span> github.com/Suraj1307</p>
           </div>
         </div>
       </div>
+    </section>
 
-      <div class="container right">
-        <div class="content">
-          <div class="tag">
-            <h2>Scalable Real-Time Systems</h2>
-          </div>
-          <div class="desc">
-            <h3>Built & Deployed with Docker and AWS ECS</h3>
-            <p>Shipped real-time applications using WebSockets, Docker containers, and AWS deployment workflows.</p>
-          </div>
-        </div>
+    <section class="section skills reveal" id="skills">
+      <div class="section-heading section-heading--center">
+        <p>Skills</p>
+        <h2>Technologies I use across product development, APIs, and deployment.</h2>
       </div>
-    </div>
 
-    <div class="morebtn">
-      <a href="#certificates" class="btn"><span>See Certificates</span>
-        <i class="fas fa-arrow-right"></i>
-      </a>
-    </div>
-  </section>
+      <div class="skills__groups" id="skillsContainer" aria-live="polite"></div>
+    </section>
 
-  <section class="certificates" id="certificates">
-    <h2 class="heading"><i class="fas fa-certificate"></i> Certificates & <span>Credentials</span></h2>
-    <p class="qoute">Structured learning and industry simulations that support my hands-on engineering work.</p>
+    <section class="section education reveal" id="education">
+      <div class="section-heading section-heading--center">
+        <p>Education</p>
+        <h2>Strong fundamentals that support ambitious engineering work.</h2>
+      </div>
 
-    <div class="box-container">
-      <div class="box">
-        <div class="content">
+      <div class="education__timeline">
+        <article class="education__item">
+          <span class="education__year">2023 - Present</span>
+          <div class="education__card">
+            <h3>B.Tech in Computer Science &amp; Engineering</h3>
+            <p>Kalinga Institute of Industrial Technology, Bhubaneswar</p>
+            <strong>CGPA: 8.98</strong>
+          </div>
+        </article>
+        <article class="education__item">
+          <span class="education__year">2022</span>
+          <div class="education__card">
+            <h3>Senior Secondary Education</h3>
+            <p>S T Raza International School (CBSE) | Class XII: 83.8%</p>
+            <strong>Completed</strong>
+          </div>
+        </article>
+        <article class="education__item">
+          <span class="education__year">Completed</span>
+          <div class="education__card">
+            <h3>Secondary Education</h3>
+            <p>CBSE Board | Class X: 89.4%</p>
+            <strong>Academic Foundation</strong>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section projects reveal" id="projects">
+      <div class="section-heading section-heading--center">
+        <p>Projects</p>
+        <h2>Built work across real-time systems, AI tools, and full-stack products.</h2>
+      </div>
+
+      <div class="projects__toolbar">
+        <div class="project-filters" id="projectFilters" aria-label="Project filters"></div>
+        <a class="button button--outline button--compact" href="./projects/">Project Archive</a>
+      </div>
+
+      <div class="project-grid" id="projectGrid" aria-live="polite"></div>
+    </section>
+
+    <section class="section achievements reveal" id="experience">
+      <div class="section-heading section-heading--center">
+        <p>Achievements</p>
+        <h2>Competitive problem solving and production-minded engineering milestones.</h2>
+      </div>
+
+      <div class="achievements__grid">
+        <article class="achievement-card">
+          <strong data-count="600">600+</strong>
+          <h3>DSA Problems Solved</h3>
+          <p>Covered Graphs, Dynamic Programming, Greedy, and other core problem-solving topics.</p>
+        </article>
+        <article class="achievement-card">
+          <strong data-count="1600">1600+</strong>
+          <h3>LeetCode Contest Rating</h3>
+          <p>Ranked in the top 22% globally through consistent competitive programming performance.</p>
+        </article>
+        <article class="achievement-card">
+          <strong>Real-Time</strong>
+          <h3>Systems Built &amp; Deployed</h3>
+          <p>Shipped real-time applications using WebSockets, Docker containers, and AWS deployment workflows.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section certificates reveal" id="certificates">
+      <div class="section-heading section-heading--center">
+        <p>Certificates</p>
+        <h2>Structured learning and credentials that support my hands-on work.</h2>
+      </div>
+
+      <div class="certificates__grid">
+        <article class="certificate-card">
+          <div class="certificate-card__icon"><i class="fas fa-cloud"></i></div>
           <h3>Google Cloud</h3>
           <p>Generative AI Skill Badge</p>
-          <h4>Hands-on credential in prompt workflows and applied generative AI concepts.</h4>
-        </div>
-      </div>
-
-      <div class="box">
-        <div class="content">
+          <strong>Hands-on credential in prompt workflows and applied generative AI concepts.</strong>
+        </article>
+        <article class="certificate-card">
+          <div class="certificate-card__icon"><i class="fab fa-aws"></i></div>
           <h3>AWS Academy</h3>
           <p>Data Engineering Virtual Internship</p>
-          <h4>Covered cloud data workflows, engineering fundamentals, and deployment-oriented practices.</h4>
-        </div>
-      </div>
-
-      <div class="box">
-        <div class="content">
+          <strong>Covered cloud data workflows, engineering fundamentals, and deployment-oriented practices.</strong>
+        </article>
+        <article class="certificate-card">
+          <div class="certificate-card__icon"><i class="fas fa-shield-alt"></i></div>
           <h3>Cybersecurity Analyst</h3>
           <p>Job Simulation Experience</p>
-          <h4>Completed practical security review and analytical exercises focused on threat-oriented thinking.</h4>
-        </div>
-      </div>
-
-      <div class="box">
-        <div class="content">
+          <strong>Completed practical security review and analytical exercises focused on threat-oriented thinking.</strong>
+        </article>
+        <article class="certificate-card">
+          <div class="certificate-card__icon"><i class="fas fa-user-graduate"></i></div>
           <h3>Academic Performance</h3>
           <p>Class XII: 83.8% | Class X: 89.4%</p>
-          <h4>Strong academic foundation alongside project-driven engineering growth.</h4>
-        </div>
+          <strong>Strong academic foundation alongside project-driven engineering growth.</strong>
+        </article>
       </div>
-    </div>
+    </section>
 
-    <div class="morebtn">
-      <a href="#contact" class="btn"><span>Contact Me</span>
-        <i class="fas fa-arrow-right"></i>
-      </a>
-    </div>
-  </section>
+    <section class="section contact reveal" id="contact">
+      <div class="section-heading section-heading--center">
+        <p>Contact</p>
+        <h2>Let's Build Something Together.</h2>
+      </div>
 
-  <section class="contact" id="contact">
-    <h2 class="heading"><i class="fas fa-headset"></i> Get in <span>Touch</span></h2>
-
-    <div class="container">
-      <div class="content">
-        <div class="image-box">
-          <img draggable="false" src="./assets/images/contact1.png" alt="Contact illustration" loading="lazy">
-        </div>
-        <form id="contact-form">
-          <div class="form-group">
-            <div class="field">
-              <input type="text" name="name" placeholder="Name" autocomplete="name" required>
-              <i class="fas fa-user"></i>
+      <div class="contact__grid">
+        <div class="contact__panel">
+          <article>
+            <i class="fas fa-phone-alt" aria-hidden="true"></i>
+            <div>
+              <h3>Phone</h3>
+              <p>+91-8789162493</p>
             </div>
-            <div class="field">
-              <input type="email" name="email" placeholder="Email" autocomplete="email" inputmode="email" required>
-              <i class="fas fa-envelope"></i>
+          </article>
+          <article>
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+            <div>
+              <h3>Email</h3>
+              <p>surajrajnkh1244@gmail.com</p>
             </div>
-            <div class="field">
-              <input type="tel" name="phone" placeholder="Phone" autocomplete="tel" inputmode="tel">
-              <i class="fas fa-phone-alt"></i>
+          </article>
+          <article>
+            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+            <div>
+              <h3>Location</h3>
+              <p>Bhubaneswar, Odisha, India</p>
             </div>
-            <div class="message">
-              <textarea placeholder="Message" name="message" autocomplete="off" required></textarea>
-              <i class="fas fa-comment-dots"></i>
-            </div>
+          </article>
+          <div class="contact__image">
+            <img src="./assets/images/contact1.png" alt="Contact illustration" loading="lazy">
           </div>
-          <div class="button-area">
-            <button type="submit">
-              Send Message <i class="fa fa-paper-plane"></i>
-            </button>
+        </div>
+
+        <form class="contact__form" id="contact-form">
+          <div class="contact__fields">
+            <label>
+              <span>Name</span>
+              <input type="text" name="name" placeholder="Name" autocomplete="name" required>
+            </label>
+            <label>
+              <span>Email</span>
+              <input type="email" name="email" placeholder="Email" autocomplete="email" inputmode="email" required>
+            </label>
+            <label>
+              <span>Phone</span>
+              <input type="tel" name="phone" placeholder="Phone" autocomplete="tel" inputmode="tel">
+            </label>
+            <label class="contact__message">
+              <span>Message</span>
+              <textarea name="message" placeholder="Message" autocomplete="off" required></textarea>
+            </label>
+          </div>
+          <div class="contact__actions">
+            <button class="button button--primary" type="submit">Send Message</button>
+            <a class="button button--ghost" href="./assets/Suraj-Kumar-Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
           </div>
           <p id="form-status" class="form-status" aria-live="polite"></p>
         </form>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <section class="footer">
-    <div class="box-container">
-      <div class="box">
+  <footer class="site-footer">
+    <div class="site-footer__grid">
+      <div>
         <h3>Suraj's Portfolio</h3>
         <p>
           Thanks for visiting my portfolio. I build reliable full-stack products,
@@ -355,44 +401,37 @@
           engineering depth with product usability.
         </p>
       </div>
-
-      <div class="box">
-        <h3>quick links</h3>
-        <a href="#home"><i class="fas fa-chevron-circle-right"></i> home</a>
-        <a href="#about"><i class="fas fa-chevron-circle-right"></i> about</a>
-        <a href="#skills"><i class="fas fa-chevron-circle-right"></i> skills</a>
-        <a href="#education"><i class="fas fa-chevron-circle-right"></i> education</a>
-        <a href="#projects"><i class="fas fa-chevron-circle-right"></i> projects</a>
-        <a href="#experience"><i class="fas fa-chevron-circle-right"></i> achievements</a>
-        <a href="#certificates"><i class="fas fa-chevron-circle-right"></i> certificates</a>
+      <div>
+        <h3>Quick Links</h3>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Achievements</a>
+        <a href="#certificates">Certificates</a>
       </div>
-
-      <div class="box">
-        <h3>contact info</h3>
-        <p><i class="fas fa-phone"></i>+91-8789162493</p>
-        <p><i class="fas fa-envelope"></i>surajrajnkh1244@gmail.com</p>
-        <p><i class="fas fa-map-marked-alt"></i>Bhubaneswar, Odisha, India</p>
-        <div class="share">
-          <a href="https://www.linkedin.com/in/suraj-kumar-a59915285" class="fab fa-linkedin" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"></a>
-          <a href="https://github.com/Suraj1307" class="fab fa-github" aria-label="GitHub" target="_blank" rel="noopener noreferrer"></a>
-          <a href="mailto:surajrajnkh1244@gmail.com" class="fas fa-envelope" aria-label="Mail"></a>
-          <a href="./assets/Suraj-Kumar-Resume.pdf" class="fas fa-file-alt" aria-label="Resume" target="_blank" rel="noopener noreferrer"></a>
+      <div>
+        <h3>Contact Info</h3>
+        <p>+91-8789162493</p>
+        <p>surajrajnkh1244@gmail.com</p>
+        <p>Bhubaneswar, Odisha, India</p>
+        <div class="site-footer__socials">
+          <a href="https://www.linkedin.com/in/suraj-kumar-a59915285" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/Suraj1307" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+          <a href="mailto:surajrajnkh1244@gmail.com" aria-label="Mail"><i class="fas fa-envelope"></i></a>
+          <a href="./assets/Suraj-Kumar-Resume.pdf" aria-label="Resume" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-alt"></i></a>
         </div>
       </div>
     </div>
+    <p class="site-footer__credit">Built by <a href="https://github.com/Suraj1307" target="_blank" rel="noopener noreferrer">Suraj Kumar</a></p>
+  </footer>
 
-    <h1 class="credit">Built by <a href="https://github.com/Suraj1307" target="_blank" rel="noopener noreferrer">Suraj Kumar</a></h1>
-  </section>
-  </main>
+  <a href="#home" aria-label="Scroll to top" class="scroll-top" id="scroll-top">
+    <i class="fas fa-arrow-up" aria-hidden="true"></i>
+  </a>
 
-  <a href="#home" aria-label="ScrollTop" class="fas fa-angle-up" id="scroll-top"></a>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.5/typed.min.js" integrity="sha512-1KbKusm/hAtkX5FScVR5G36wodIMnVd/aP04af06iyQTkD17szAMGNmxfNH+tEuFp3Og/P5G32L1qEC47CZbUQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="./assets/js/particles.min.js"></script>
-  <script src="./assets/js/app.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js" integrity="sha512-SttpKhJqONuBVxbRcuH0wezjuX+BoFoli0yPsnrAADcHsQMW8rkR84ItFHGIkPvhnlRnE2FaifDOUw+EltbuHg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://unpkg.com/scrollreveal"></script>
-  <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/script.js" defer></script>
 </body>
 </html>
