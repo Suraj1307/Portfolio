@@ -5,8 +5,8 @@
     "image": "code-collaborator",
     "category": "realtime",
     "links": {
-      "view": "http://docker-aws-alb-1031415497.eu-north-1.elb.amazonaws.com/",
-      "code": "https://github.com/Suraj1307/CodeCollaborator"
+      "view": "https://code-collab-app-seven.vercel.app/",
+      "code": "https://github.com/Suraj1307/code-collab-app"
     }
   },
   {
